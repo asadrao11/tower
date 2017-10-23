@@ -1,0 +1,12 @@
+--- 
+glance_image: 
+  auth: 
+    auth_url: "http://10.100.40.245:5000/v2.0/"
+    login_password: admin
+    login_tenant_name: admin
+    login_username: admin
+  container_format: bare
+  copy_from: "http://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.img"
+  disk_format: qcow2
+  name: cirros
+  state: present
