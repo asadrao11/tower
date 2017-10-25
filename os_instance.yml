@@ -1,0 +1,22 @@
+- name: Deploy on OpenStack
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: hello
+    os_server:
+       state: present
+       auth:
+         auth_url: http://10.100.40.245:5000/v2.0/
+         username: gocha1
+         password: gocha1
+         project_name: gocha1
+       name: vm123
+       image: e30e10ef-b23f-4668-9468-8555975bb729
+       timeout: 200
+       flavor: 50
+       nics:
+         - net-id: 798049ce-4c2f-4f3c-93ee-c64b14a25486
+         - net-name: newnet
+       meta:
+         hostname: test1
+

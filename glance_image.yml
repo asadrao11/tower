@@ -1,0 +1,14 @@
+- name: Deploy on OpenStack
+  hosts: localhost
+  gather_facts: False
+  tasks:
+  - name: Upload an image from an HTTP URL
+    glance_image:
+      state: present
+      login_username: gocha1
+      login_password: gocha1
+      login_tenant_name: gocha1
+      name: cirros
+      container_format: bare
+      disk_format: qcow2
+      copy_from: http://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.img

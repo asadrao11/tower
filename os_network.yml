@@ -1,0 +1,18 @@
+- name: Deploy on OpenStack
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: Create the test network
+    os_network:
+      state: present
+      auth:
+        auth_url: http://10.100.40.245:5000/v2.0
+        username: gocha1
+        password: gocha1
+        project_name: gocha1
+      name: testnet
+      external: False
+      shared: False
+      provider_network_type: vxlan
+      provider_physical_network: ~
+

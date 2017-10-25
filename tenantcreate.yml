@@ -1,0 +1,12 @@
+- name: Deploy on OpenStack
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: Create a tenant
+    keystone_user:
+      endpoint: http://10.100.40.100:5000/v2.0
+      login_user: admin
+      login_password: twcjvw2Yan7x4tYYA9qxWjYcR
+      tenant: newten45
+      tenant_description: "Default Tenant"
+     

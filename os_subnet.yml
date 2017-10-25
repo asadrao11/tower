@@ -1,0 +1,18 @@
+# Create a new (or update an existing) subnet on the specified network
+
+- name: Deploy on OpenStack
+  hosts: localhost
+  gather_facts: False
+  tasks:
+  - name: Create the subnet
+    os_subnet:
+      state: present
+      network_name: testnet
+      name: testnetsub
+      cidr: 6.6.0.0/24
+      dns_nameservers:
+         - 8.8.8.7
+         - 8.8.8.8
+      hosts_routes:
+         -destination:
+
